@@ -7,266 +7,375 @@
 <meta name="description" content="Dita Shahihah — Data Scientist. AI-powered applications, data analytics, and interactive dashboards. Portfolio with live demos." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <style>
-  :root{
-    --bg:#0b1120; --bg2:#0f172a; --card:#111c33; --line:#1e2d49;
-    --txt:#e6edf7; --muted:#9fb0c9; --brand:#38bdf8; --brand2:#818cf8;
-    --green:#34d399; --maxw:1080px;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  html{scroll-behavior:smooth}
-  body{font-family:'Inter',system-ui,sans-serif;background:var(--bg);color:var(--txt);line-height:1.6}
-  a{color:inherit;text-decoration:none}
-  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
-  section{padding:72px 0}
-  h2{font-size:1.7rem;font-weight:800;margin-bottom:6px}
-  .lead{color:var(--muted);margin-bottom:34px;max-width:640px}
-  .eyebrow{color:var(--brand);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:.78rem}
+:root{
+  --navy:#0B1A3B;
+  --navy2:#0F2044;
+  --blue:#1D4ED8;
+  --blue-mid:#3B82F6;
+  --blue-lt:#EFF6FF;
+  --blue-lt2:#DBEAFE;
+  --white:#FFFFFF;
+  --bg:#F8FAFC;
+  --txt:#0F172A;
+  --muted:#475569;
+  --border:#CBD5E1;
+  --border-lt:#E2E8F0;
+  --green:#059669;
+  --maxw:1080px;
+  --r:6px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Plus Jakarta Sans',system-ui,sans-serif;background:var(--white);color:var(--txt);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
 
-  /* nav */
-  nav{position:sticky;top:0;z-index:20;background:rgba(11,17,32,.82);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
-  nav .brand{font-weight:800;letter-spacing:.02em}
-  nav .links{display:flex;gap:22px;font-size:.92rem}
-  nav .links a{color:var(--muted);transition:color .2s}
-  nav .links a:hover{color:var(--txt)}
-  @media(max-width:680px){nav .links{display:none}}
+/* ── NAV ── */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid var(--border-lt)}
+nav .inner{display:flex;align-items:center;justify-content:space-between;height:64px;max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.nav-brand{display:flex;align-items:center;gap:10px;font-weight:800;font-size:.95rem;letter-spacing:-.01em;color:var(--navy)}
+.nav-mark{width:30px;height:30px;background:var(--blue);border-radius:var(--r);display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800;flex-shrink:0}
+.nav-links{display:flex;gap:4px}
+.nav-links a{color:var(--muted);font-size:.875rem;font-weight:500;padding:7px 13px;border-radius:var(--r);transition:all .15s}
+.nav-links a:hover{color:var(--txt);background:var(--bg)}
+@media(max-width:640px){.nav-links{display:none}}
 
-  /* hero */
-  .hero{position:relative;overflow:hidden;padding:96px 0 80px}
-  .hero::before{content:"";position:absolute;inset:0;background:
-    radial-gradient(620px 320px at 78% -8%,rgba(56,189,248,.20),transparent),
-    radial-gradient(560px 300px at 10% 12%,rgba(129,140,248,.18),transparent);}
-  .hero .wrap{position:relative}
-  .hero h1{font-size:clamp(2.3rem,5vw,3.5rem);font-weight:800;line-height:1.08;letter-spacing:-.02em}
-  .hero h1 span{background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent}
-  .hero p.title{font-size:1.15rem;color:var(--muted);margin:14px 0 8px;font-weight:500}
-  .hero p.sum{color:var(--muted);max-width:660px;margin-top:14px}
-  .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
-  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:10px;font-weight:600;font-size:.92rem;transition:transform .15s,box-shadow .2s,background .2s;border:1px solid transparent}
-  .btn.primary{background:linear-gradient(90deg,var(--brand),var(--brand2));color:#06121f}
-  .btn.ghost{border-color:var(--line);color:var(--txt)}
-  .btn:hover{transform:translateY(-2px)}
-  .btn.primary:hover{box-shadow:0 10px 30px -10px rgba(56,189,248,.6)}
+/* ── HERO ── */
+.hero{background:var(--navy);padding:96px 0 88px;position:relative;overflow:hidden}
+.hero-grid-bg{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:52px 52px}
+.hero-glow{position:absolute;right:-80px;top:-120px;width:600px;height:600px;background:radial-gradient(circle,rgba(59,130,246,.18) 0%,transparent 70%);pointer-events:none}
+.hero .wrap{position:relative;z-index:1;display:grid;grid-template-columns:1fr 220px;gap:48px;align-items:center}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:rgba(59,130,246,.12);border:1px solid rgba(59,130,246,.28);border-radius:4px;padding:4px 12px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#93C5FD;margin-bottom:22px}
+.hero-dot{width:6px;height:6px;border-radius:50%;background:#60A5FA;animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:800;line-height:1.06;letter-spacing:-.03em;color:#fff;margin-bottom:8px}
+.hero h1 .nm{color:#60A5FA}
+.hero-role{font-size:1rem;color:#7DD3FC;font-weight:500;margin-bottom:18px;letter-spacing:.01em}
+.hero-bio{color:#94A3B8;font-size:.925rem;max-width:520px;line-height:1.75;margin-bottom:32px}
+.hero-cta{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:var(--r);font-weight:600;font-size:.875rem;border:1.5px solid transparent;transition:all .15s;cursor:pointer;font-family:inherit}
+.btn-blue{background:var(--blue-mid);color:#fff;border-color:var(--blue-mid)}
+.btn-blue:hover{background:#2563EB;border-color:#2563EB}
+.btn-ghost{background:transparent;color:#CBD5E1;border-color:rgba(255,255,255,.18)}
+.btn-ghost:hover{background:rgba(255,255,255,.07);border-color:rgba(255,255,255,.32);color:#fff}
+.hero-aside{display:flex;flex-direction:column;gap:0;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.09);border-radius:10px;overflow:hidden}
+.hero-stat{padding:18px 20px;border-bottom:1px solid rgba(255,255,255,.07)}
+.hero-stat:last-child{border:none}
+.hero-stat .v{font-size:1.7rem;font-weight:800;color:#fff;letter-spacing:-.04em;line-height:1;font-variant-numeric:tabular-nums}
+.hero-stat .l{font-size:.72rem;color:#64748B;text-transform:uppercase;letter-spacing:.06em;margin-top:3px}
+@media(max-width:720px){.hero .wrap{grid-template-columns:1fr}.hero-aside{display:none}}
 
-  /* skills */
-  .skillgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
-  .skillcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
-  .skillcard h3{font-size:.96rem;margin-bottom:10px;color:var(--brand)}
-  .chips{display:flex;flex-wrap:wrap;gap:7px}
-  .chip{background:#0c1730;border:1px solid var(--line);color:var(--muted);font-size:.8rem;padding:4px 10px;border-radius:999px}
+/* ── DIVIDER ── */
+.section-divider{height:1px;background:var(--border-lt);margin:0}
 
-  /* projects */
-  .pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
-  .pcard{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;transition:transform .18s,border-color .2s}
-  .pcard:hover{transform:translateY(-4px);border-color:var(--brand)}
-  .pcard .tag{font-size:.74rem;font-weight:600;color:var(--green);text-transform:uppercase;letter-spacing:.08em}
-  .pcard h3{font-size:1.18rem;margin:8px 0 8px}
-  .pcard p{color:var(--muted);font-size:.92rem;flex:1}
-  .pcard .tech{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 16px}
-  .pcard .tech span{font-size:.74rem;color:var(--muted);background:#0c1730;border:1px solid var(--line);padding:3px 9px;border-radius:6px}
-  .pcard .acts{display:flex;gap:10px}
-  .pcard .acts a{font-size:.85rem;font-weight:600;padding:8px 14px;border-radius:8px;border:1px solid var(--line)}
-  .pcard .acts a.demo{background:rgba(56,189,248,.12);border-color:rgba(56,189,248,.4);color:var(--brand)}
-  .pcard .acts a:hover{background:#152544}
+/* ── SECTION HEADER ── */
+section{padding:76px 0}
+.sec-hd{margin-bottom:36px}
+.sec-tag{font-size:.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-mid);margin-bottom:8px;display:block}
+.sec-title{font-size:clamp(1.45rem,3vw,1.9rem);font-weight:800;letter-spacing:-.025em;color:var(--txt)}
+.sec-lead{color:var(--muted);margin-top:8px;font-size:.9rem;max-width:560px;line-height:1.7}
 
-  /* timeline */
-  .tl{border-left:2px solid var(--line);margin-left:8px}
-  .tl .item{position:relative;padding:0 0 26px 26px}
-  .tl .item::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;border-radius:50%;background:var(--brand);box-shadow:0 0 0 4px rgba(56,189,248,.15)}
-  .tl .role{font-weight:700}
-  .tl .meta{color:var(--brand);font-size:.86rem;margin:2px 0 8px}
-  .tl ul{color:var(--muted);font-size:.9rem;padding-left:18px}
-  .tl ul li{margin-bottom:4px}
+/* ── ABOUT ── */
+#about{background:var(--white)}
+.about-body{max-width:680px;color:var(--muted);font-size:.95rem;line-height:1.8}
 
-  .two{display:grid;grid-template-columns:1.5fr 1fr;gap:40px}
-  @media(max-width:760px){.two{grid-template-columns:1fr}}
-  .edu{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px}
-  .edu h3{font-size:1.05rem}
-  .edu .meta{color:var(--brand);font-size:.86rem;margin:3px 0 10px}
-  .edu p{color:var(--muted);font-size:.9rem}
+/* ── SKILLS ── */
+#skills{background:var(--blue-lt)}
+.skill-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}
+.skill-card{background:var(--white);border:1px solid var(--blue-lt2);border-radius:var(--r);padding:18px 20px;border-left:4px solid var(--blue)}
+.skill-card h3{font-size:.85rem;font-weight:700;color:var(--txt);margin-bottom:11px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{background:var(--blue-lt);border:1px solid var(--blue-lt2);color:var(--blue);font-size:.76rem;padding:3px 10px;border-radius:4px;font-weight:500}
 
-  /* contact */
-  .contact{text-align:center;background:linear-gradient(180deg,transparent,rgba(56,189,248,.05))}
-  .contact .btn{margin:6px}
-  footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:var(--muted);font-size:.85rem}
+/* ── PROJECTS ── */
+#projects{background:var(--white)}
+.pgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:16px}
+.pcard{background:var(--white);border:1px solid var(--border-lt);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;transition:box-shadow .2s,transform .18s}
+.pcard:hover{box-shadow:0 12px 36px -10px rgba(29,78,216,.14);transform:translateY(-3px);border-color:var(--border)}
+.pcard-stripe{height:4px}
+.pcard-body{padding:20px;display:flex;flex-direction:column;flex:1}
+.pcard .tag{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:8px}
+.pcard h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:var(--txt);line-height:1.35}
+.pcard p{color:var(--muted);font-size:.86rem;flex:1;line-height:1.68}
+.pcard .tech{display:flex;flex-wrap:wrap;gap:5px;margin:14px 0 16px}
+.pcard .tech span{font-size:.73rem;color:var(--muted);background:var(--bg);border:1px solid var(--border-lt);padding:3px 9px;border-radius:4px}
+.pcard .acts a{font-size:.83rem;font-weight:600;padding:8px 16px;border-radius:var(--r);border:1.5px solid currentColor;display:inline-block;transition:all .15s}
+.pcard .acts a:hover{color:#fff!important;background:currentColor}
+
+/* ── EXPERIENCE ── */
+#experience{background:var(--bg)}
+.exp-grid{display:grid;grid-template-columns:1.6fr 1fr;gap:52px}
+.tl{border-left:2px solid var(--border-lt);margin-left:6px}
+.tl .item{position:relative;padding:0 0 30px 28px}
+.tl .item:last-child{padding-bottom:0}
+.tl .item::before{content:'';position:absolute;left:-8px;top:6px;width:14px;height:14px;border-radius:50%;background:var(--white);border:2.5px solid var(--blue)}
+.tl .role{font-weight:700;font-size:.975rem;color:var(--txt)}
+.tl .meta{color:var(--blue-mid);font-size:.82rem;margin:3px 0 10px;font-weight:600}
+.tl ul{color:var(--muted);font-size:.86rem;padding-left:16px}
+.tl ul li{margin-bottom:4px;line-height:1.6}
+.edu-card{background:var(--white);border:1px solid var(--border-lt);border-radius:var(--r);padding:22px;border-top:4px solid var(--blue)}
+.edu-card h3{font-size:.975rem;font-weight:700;color:var(--txt)}
+.edu-card .meta{color:var(--blue-mid);font-size:.82rem;margin:4px 0 12px;font-weight:600}
+.edu-card p{color:var(--muted);font-size:.86rem;line-height:1.7}
+@media(max-width:760px){.exp-grid{grid-template-columns:1fr}}
+
+/* ── CONTACT ── */
+#contact{background:var(--navy);text-align:center;padding:88px 0}
+#contact .sec-tag{color:#60A5FA}
+#contact .sec-title{color:#fff}
+#contact .sec-lead{color:#94A3B8;margin:10px auto 32px}
+.contact-btns{display:flex;gap:10px;flex-wrap:wrap;justify-content:center}
+
+/* ── FOOTER ── */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,.07);padding:22px 0;text-align:center;color:#334155;font-size:.82rem}
 </style>
 </head>
 <body>
 
-<nav><div class="wrap">
-  <div class="brand">Dita Shahihah</div>
-  <div class="links">
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#experience">Experience</a>
-    <a href="#contact">Contact</a>
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <div class="nav-brand">
+      <div class="nav-mark">DS</div>
+      Dita Shahihah
+    </div>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
   </div>
-</div></nav>
+</nav>
 
-<header class="hero"><div class="wrap">
-  <span class="eyebrow">Data Scientist</span>
-  <h1>Hi, I'm <span>Dita Shahihah</span></h1>
-  <p class="title">Building AI-powered applications, data analytics &amp; interactive dashboards</p>
-  <p class="sum">Data Scientist with 3+ years of experience delivering AI applications, analytics solutions, and
-  interactive dashboards for political, corporate, and government clients. Skilled in LLM integration,
-  predictive modeling, sentiment analysis, and ETL pipeline engineering.</p>
-  <div class="cta">
-    <a class="btn primary" href="#projects">View Projects ↓</a>
-    <a class="btn ghost" href="Dita_Shahihah_CV.docx" download>Download CV ⬇</a>
-    <a class="btn ghost" href="https://www.linkedin.com/in/dita-shahihah/" target="_blank" rel="noopener">LinkedIn</a>
-    <a class="btn ghost" href="https://github.com/ditashahihah" target="_blank" rel="noopener">GitHub</a>
-  </div>
-</div></header>
-
-<section id="about"><div class="wrap">
-  <span class="eyebrow">About</span>
-  <h2>Profile</h2>
-  <p class="lead">A data scientist focused on turning data into decisions — from LLM-assisted development and
-  predictive modeling to real-time dashboards. Bachelor of Informatics, Universitas Jember (GPA 3.56).
-  Demos below are live and clickable; source code is private and available on request.</p>
-</div></section>
-
-<section id="skills" style="background:var(--bg2)"><div class="wrap">
-  <span class="eyebrow">Skills</span>
-  <h2>Tech Stack</h2>
-  <p class="lead">Tools and methods I work with across the data &amp; AI lifecycle.</p>
-  <div class="skillgrid">
-    <div class="skillcard"><h3>Programming &amp; Dev</h3><div class="chips">
-      <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML/CSS</span><span class="chip">REST API</span></div></div>
-    <div class="skillcard"><h3>AI &amp; LLM</h3><div class="chips">
-      <span class="chip">LLM Integration</span><span class="chip">Prompt Engineering</span><span class="chip">NLP</span><span class="chip">RAG / Web Search</span><span class="chip">AI-Assisted Dev</span></div></div>
-    <div class="skillcard"><h3>Machine Learning</h3><div class="chips">
-      <span class="chip">Sentiment Analysis</span><span class="chip">Predictive Modeling</span><span class="chip">K-Means</span><span class="chip">Regression</span></div></div>
-    <div class="skillcard"><h3>Data Engineering</h3><div class="chips">
-      <span class="chip">ETL Pipelines</span><span class="chip">Elasticsearch</span><span class="chip">Web Scraping</span><span class="chip">System Integration</span></div></div>
-    <div class="skillcard"><h3>Analytics &amp; Viz</h3><div class="chips">
-      <span class="chip">Pandas</span><span class="chip">Matplotlib</span><span class="chip">Looker</span><span class="chip">Custom Dashboards</span><span class="chip">EDA</span></div></div>
-    <div class="skillcard"><h3>Project &amp; Stakeholder</h3><div class="chips">
-      <span class="chip">Cross-functional</span><span class="chip">Sprint Planning</span><span class="chip">Stakeholder Mgmt</span></div></div>
-  </div>
-</div></section>
-
-<section id="projects"><div class="wrap">
-  <span class="eyebrow">Portfolio</span>
-  <h2>Projects</h2>
-  <p class="lead">Live, working demos. Each can be tried directly via the link.</p>
-  <div class="pgrid">
-
-    <div class="pcard">
-      <span class="tag">Looker Studio · Analytics</span>
-      <h3>Retail Transaction Analytics Dashboard</h3>
-      <p>Looker Studio-style analytics dashboard built from 4 real retail datasets (6,500 records).
-      Covers revenue trends, product &amp; regional performance, order status, time-of-day patterns,
-      and customer behaviour — all charts rendered from raw data via Python EDA.</p>
-      <div class="tech"><span>Python</span><span>Pandas</span><span>Looker Studio</span><span>EDA</span><span>Canvas API</span></div>
-      <div class="acts"><a class="demo" href="projects/retail-dashboard/" target="_blank" rel="noopener">Live Demo ↗</a></div>
-    </div>
-
-    <div class="pcard">
-      <span class="tag">Power BI · Analytics</span>
-      <h3>PLN Electricity Distribution Dashboard</h3>
-      <p>Interactive analytics dashboard for PLN's national electricity distribution &amp; consumption data.
-      Built in Power BI with multi-filter slicers across region, tariff, and service type — reconstructed
-      as a self-contained web presentation from a live <code>.pbix</code> file.</p>
-      <div class="tech"><span>Power BI</span><span>DAX</span><span>Data Viz</span><span>Python</span></div>
-      <div class="acts"><a class="demo" href="projects/pln-dashboard/" target="_blank" rel="noopener">Live Demo ↗</a></div>
-    </div>
-
-    <div class="pcard">
-      <span class="tag">Dashboard</span>
-      <h3>Media Intelligence Dashboard</h3>
-      <p>Configurable interactive dashboard for political, corporate &amp; government clients. Real-time media
-      &amp; analytics metrics on Elasticsearch with custom HTML/CSS/SQL components.</p>
-      <div class="tech"><span>HTML/CSS</span><span>SQL</span><span>Elasticsearch</span><span>Data Viz</span></div>
-      <div class="acts"><a class="demo" href="https://mediaintelligence.netlify.app/" target="_blank" rel="noopener">Live Demo ↗</a></div>
-    </div>
-
-    <div class="pcard">
-      <span class="tag">ML · NLP</span>
-      <h3>Sentiment-Based Inflation Prediction</h3>
-      <p>End-to-end predictive system fusing real-time social media sentiment with historical macroeconomic
-      indicators to forecast short-term inflation, surfaced through an interactive dashboard.</p>
-      <div class="tech"><span>Machine Learning</span><span>NLP</span><span>Time-series</span></div>
-      <div class="acts"><a class="demo" href="https://prediction-inflation.netlify.app/" target="_blank" rel="noopener">Live Demo ↗</a></div>
-    </div>
-
-    <div class="pcard">
-      <span class="tag">Graph · Analytics</span>
-      <h3>Network Graph Engine</h3>
-      <p>Engine that builds social/geostrategic network graphs from raw data — node/edge construction,
-      clustering, centrality &amp; community detection — with an interactive dashboard &amp; analytics.</p>
-      <div class="tech"><span>NetworkX</span><span>pyvis</span><span>Streamlit</span></div>
-      <div class="acts"><a class="demo" href="https://ditash-network-graph-engine.hf.space" target="_blank" rel="noopener">Live Demo ↗</a></div>
-    </div>
-
-    <div class="pcard">
-      <span class="tag">LLM · API</span>
-      <h3>Agent Hub (LLM APIs)</h3>
-      <p>One service, three LLM agents: <b>Summarize</b> any data, <b>score data quality</b> (credibility &amp;
-      completeness), and <b>search web context</b> (DuckDuckGo + synthesis with citations).</p>
-      <div class="tech"><span>FastAPI</span><span>LangChain</span><span>Groq</span><span>Docker</span></div>
-      <div class="acts"><a class="demo" href="https://ditash-agent-hub.hf.space/docs" target="_blank" rel="noopener">Live API ↗</a></div>
-    </div>
-
-  </div>
-</div></section>
-
-<section id="experience" style="background:var(--bg2)"><div class="wrap">
-  <span class="eyebrow">Experience &amp; Education</span>
-  <h2>Journey</h2>
-  <div class="two" style="margin-top:30px">
-    <div class="tl">
-      <div class="item">
-        <div class="role">Data Scientist</div>
-        <div class="meta">PT Ebdesk Teknologi · Jul 2023 – Present</div>
-        <ul>
-          <li>Built AI-powered data applications using Python &amp; LLM integration.</li>
-          <li>Developed custom interactive dashboards for multi-segment clients (Elasticsearch).</li>
-          <li>Implemented predictive models &amp; sentiment analysis; built analytics APIs.</li>
-          <li>Engineered &amp; maintained ETL pipelines across multiple data sources.</li>
-        </ul>
-      </div>
-      <div class="item">
-        <div class="role">Business Analyst</div>
-        <div class="meta">PT Tatacipta Teknologi Indonesia · Jun 2022 – Mar 2023</div>
-        <ul>
-          <li>Analyzed SOPs &amp; business processes at district/regional government level.</li>
-          <li>Formulated improvement recommendations aligned with Kemenpan RB standards.</li>
-        </ul>
-      </div>
-      <div class="item">
-        <div class="role">Data Analyst Intern</div>
-        <div class="meta">Bank Syariah Indonesia · Mar 2021 – Sep 2021</div>
-        <ul>
-          <li>Performed data cleaning, validation &amp; EDA on pension financing data.</li>
-          <li>Built visualizations &amp; dashboards in Looker for stakeholders.</li>
-        </ul>
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-grid-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="wrap">
+    <div class="hero-left">
+      <div class="hero-eyebrow"><div class="hero-dot"></div>Data Scientist · Open to Work</div>
+      <h1>Hi, I'm <span class="nm">Dita Shahihah</span></h1>
+      <div class="hero-role">Building AI Applications, Analytics &amp; Interactive Dashboards</div>
+      <p class="hero-bio">Data Scientist with 3+ years delivering AI-powered applications, predictive models, and real-time dashboards for political, corporate, and government clients. Skilled in LLM integration, NLP, and ETL engineering.</p>
+      <div class="hero-cta">
+        <a class="btn btn-blue" href="#projects">View Projects ↓</a>
+        <a class="btn btn-ghost" href="Dita_Shahihah_CV.docx" download>Download CV ⬇</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/dita-shahihah/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn btn-ghost" href="https://github.com/ditashahihah" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
-    <div>
-      <div class="edu">
-        <h3>Bachelor of Informatics (S.Kom)</h3>
-        <div class="meta">Universitas Jember · GPA 3.56 / 4.00</div>
-        <p>Thesis: Sales Data Clustering using K-Means for Marketing Strategy.<br/>
-        Coursework: Data Mining, Machine Learning, Big Data Analytics, Data Visualization, Python, Databases.</p>
+    <div class="hero-aside">
+      <div class="hero-stat">
+        <div class="v">3+</div><div class="l">Years Experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="v">6</div><div class="l">Live Projects</div>
+      </div>
+      <div class="hero-stat">
+        <div class="v">3.56</div><div class="l">GPA</div>
+      </div>
+      <div class="hero-stat">
+        <div class="v">BSI</div><div class="l">Prev. Employer</div>
       </div>
     </div>
   </div>
-</div></section>
+</header>
 
-<section id="contact" class="contact"><div class="wrap">
-  <span class="eyebrow">Contact</span>
-  <h2>Let's connect</h2>
-  <p class="lead" style="margin:8px auto 24px">Open to roles in Data Science, AI Application Development &amp; Data Analytics.</p>
-  <a class="btn primary" href="mailto:ditashahihah@gmail.com">Email me</a>
-  <a class="btn ghost" href="https://www.linkedin.com/in/dita-shahihah/" target="_blank" rel="noopener">LinkedIn</a>
-  <a class="btn ghost" href="https://github.com/ditashahihah" target="_blank" rel="noopener">GitHub</a>
-</div></section>
+<div class="section-divider"></div>
 
-<footer><div class="wrap">© 2026 Dita Shahihah · Data Scientist</div></footer>
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-tag">About</span>
+      <h2 class="sec-title">Profile</h2>
+    </div>
+    <p class="about-body">A data scientist focused on turning data into decisions — from LLM-assisted development and predictive modeling to real-time dashboards. Bachelor of Informatics, Universitas Jember (GPA 3.56). All demos below are live and fully interactive; source code is private and available on request.</p>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-tag">Skills</span>
+      <h2 class="sec-title">Tech Stack</h2>
+      <p class="sec-lead">Tools and methods I work with across the data &amp; AI lifecycle.</p>
+    </div>
+    <div class="skill-grid">
+      <div class="skill-card"><h3>Programming &amp; Dev</h3><div class="chips">
+        <span class="chip">Python</span><span class="chip">SQL</span><span class="chip">HTML/CSS</span><span class="chip">REST API</span></div></div>
+      <div class="skill-card"><h3>AI &amp; LLM</h3><div class="chips">
+        <span class="chip">LLM Integration</span><span class="chip">Prompt Engineering</span><span class="chip">NLP</span><span class="chip">RAG / Web Search</span><span class="chip">AI-Assisted Dev</span></div></div>
+      <div class="skill-card"><h3>Machine Learning</h3><div class="chips">
+        <span class="chip">Sentiment Analysis</span><span class="chip">Predictive Modeling</span><span class="chip">K-Means</span><span class="chip">Regression</span></div></div>
+      <div class="skill-card"><h3>Data Engineering</h3><div class="chips">
+        <span class="chip">ETL Pipelines</span><span class="chip">Elasticsearch</span><span class="chip">Web Scraping</span><span class="chip">System Integration</span></div></div>
+      <div class="skill-card"><h3>Analytics &amp; Viz</h3><div class="chips">
+        <span class="chip">Pandas</span><span class="chip">Matplotlib</span><span class="chip">Looker</span><span class="chip">Power BI</span><span class="chip">Custom Dashboards</span><span class="chip">EDA</span></div></div>
+      <div class="skill-card"><h3>Project &amp; Stakeholder</h3><div class="chips">
+        <span class="chip">Cross-functional</span><span class="chip">Sprint Planning</span><span class="chip">Stakeholder Mgmt</span></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-tag">Portfolio</span>
+      <h2 class="sec-title">Projects</h2>
+      <p class="sec-lead">Live, working demos. Each can be tried directly via the link.</p>
+    </div>
+    <div class="pgrid">
+
+      <div class="pcard">
+        <div class="pcard-stripe" style="background:#1D4ED8"></div>
+        <div class="pcard-body">
+          <span class="tag" style="color:#1D4ED8">Looker Studio · Analytics</span>
+          <h3>Retail Transaction Analytics Dashboard</h3>
+          <p>Looker Studio-style analytics dashboard from 4 real retail datasets (6,500 records). Covers revenue trends, product &amp; regional performance, order status, and customer behaviour — all from Python EDA.</p>
+          <div class="tech"><span>Python</span><span>Pandas</span><span>Looker Studio</span><span>EDA</span></div>
+          <div class="acts"><a href="projects/retail-dashboard/" target="_blank" rel="noopener" style="color:#1D4ED8">Live Demo ↗</a></div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-stripe" style="background:#D97706"></div>
+        <div class="pcard-body">
+          <span class="tag" style="color:#D97706">Power BI · Analytics</span>
+          <h3>PLN Electricity Distribution Dashboard</h3>
+          <p>Interactive analytics dashboard for PLN's national electricity distribution data. Built in Power BI with multi-filter slicers across region, tariff, and service type — reconstructed from a live <code>.pbix</code> file.</p>
+          <div class="tech"><span>Power BI</span><span>DAX</span><span>Data Viz</span><span>Python</span></div>
+          <div class="acts"><a href="projects/pln-dashboard/" target="_blank" rel="noopener" style="color:#D97706">Live Demo ↗</a></div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-stripe" style="background:#0D9488"></div>
+        <div class="pcard-body">
+          <span class="tag" style="color:#0D9488">Dashboard · Elasticsearch</span>
+          <h3>Media Intelligence Dashboard</h3>
+          <p>Configurable dashboard for political, corporate &amp; government clients. Real-time media &amp; analytics metrics on Elasticsearch with custom HTML/CSS/SQL components.</p>
+          <div class="tech"><span>HTML/CSS</span><span>SQL</span><span>Elasticsearch</span><span>Data Viz</span></div>
+          <div class="acts"><a href="https://mediaintelligence.netlify.app/" target="_blank" rel="noopener" style="color:#0D9488">Live Demo ↗</a></div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-stripe" style="background:#7C3AED"></div>
+        <div class="pcard-body">
+          <span class="tag" style="color:#7C3AED">ML · NLP</span>
+          <h3>Sentiment-Based Inflation Prediction</h3>
+          <p>End-to-end predictive system fusing real-time social media sentiment with historical macroeconomic indicators to forecast short-term inflation, surfaced through an interactive dashboard.</p>
+          <div class="tech"><span>Machine Learning</span><span>NLP</span><span>Time-series</span></div>
+          <div class="acts"><a href="https://prediction-inflation.netlify.app/" target="_blank" rel="noopener" style="color:#7C3AED">Live Demo ↗</a></div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-stripe" style="background:#059669"></div>
+        <div class="pcard-body">
+          <span class="tag" style="color:#059669">Graph · Analytics</span>
+          <h3>Network Graph Engine</h3>
+          <p>Engine that builds social/geostrategic network graphs from raw data — node/edge construction, clustering, centrality &amp; community detection — with an interactive dashboard &amp; analytics.</p>
+          <div class="tech"><span>NetworkX</span><span>pyvis</span><span>Streamlit</span></div>
+          <div class="acts"><a href="https://ditash-network-graph-engine.hf.space" target="_blank" rel="noopener" style="color:#059669">Live Demo ↗</a></div>
+        </div>
+      </div>
+
+      <div class="pcard">
+        <div class="pcard-stripe" style="background:#E11D48"></div>
+        <div class="pcard-body">
+          <span class="tag" style="color:#E11D48">LLM · API</span>
+          <h3>Agent Hub (LLM APIs)</h3>
+          <p>One service, three LLM agents: <strong>Summarize</strong> any data, <strong>score data quality</strong> (credibility &amp; completeness), and <strong>search web context</strong> (DuckDuckGo + synthesis with citations).</p>
+          <div class="tech"><span>FastAPI</span><span>LangChain</span><span>Groq</span><span>Docker</span></div>
+          <div class="acts"><a href="https://ditash-agent-hub.hf.space/docs" target="_blank" rel="noopener" style="color:#E11D48">Live API ↗</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-hd">
+      <span class="sec-tag">Experience &amp; Education</span>
+      <h2 class="sec-title">Journey</h2>
+    </div>
+    <div class="exp-grid">
+      <div class="tl">
+        <div class="item">
+          <div class="role">Data Scientist</div>
+          <div class="meta">PT Ebdesk Teknologi &nbsp;·&nbsp; Jul 2023 – Present</div>
+          <ul>
+            <li>Built AI-powered data applications using Python &amp; LLM integration.</li>
+            <li>Developed custom interactive dashboards for multi-segment clients (Elasticsearch).</li>
+            <li>Implemented predictive models &amp; sentiment analysis; built analytics APIs.</li>
+            <li>Engineered &amp; maintained ETL pipelines across multiple data sources.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="role">Business Analyst</div>
+          <div class="meta">PT Tatacipta Teknologi Indonesia &nbsp;·&nbsp; Jun 2022 – Mar 2023</div>
+          <ul>
+            <li>Analyzed SOPs &amp; business processes at district/regional government level.</li>
+            <li>Formulated improvement recommendations aligned with Kemenpan RB standards.</li>
+          </ul>
+        </div>
+        <div class="item">
+          <div class="role">Data Analyst Intern</div>
+          <div class="meta">Bank Syariah Indonesia &nbsp;·&nbsp; Mar 2021 – Sep 2021</div>
+          <ul>
+            <li>Performed data cleaning, validation &amp; EDA on pension financing data.</li>
+            <li>Built visualizations &amp; dashboards in Looker for stakeholders.</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="edu-card">
+          <h3>Bachelor of Informatics (S.Kom)</h3>
+          <div class="meta">Universitas Jember &nbsp;·&nbsp; GPA 3.56 / 4.00</div>
+          <p>Thesis: Sales Data Clustering using K-Means for Marketing Strategy.<br/><br/>
+          Coursework: Data Mining, Machine Learning, Big Data Analytics, Data Visualization, Python, Databases.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap">
+    <div class="sec-hd" style="text-align:center;margin-bottom:28px">
+      <span class="sec-tag">Contact</span>
+      <h2 class="sec-title">Let's Connect</h2>
+      <p class="sec-lead" style="margin:10px auto 0">Open to roles in Data Science, AI Application Development &amp; Analytics.</p>
+    </div>
+    <div class="contact-btns">
+      <a class="btn btn-blue" href="mailto:ditashahihah@gmail.com">Email me</a>
+      <a class="btn btn-ghost" href="https://www.linkedin.com/in/dita-shahihah/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn btn-ghost" href="https://github.com/ditashahihah" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Dita Shahihah · Data Scientist</div>
+</footer>
 
 </body>
 </html>
