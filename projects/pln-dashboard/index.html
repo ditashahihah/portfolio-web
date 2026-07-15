@@ -536,6 +536,56 @@ table.ppivot .sub td.r{color:#0057A0!important;}
   .pkpi-row{grid-template-columns:1fr 1fr;}
   .pchart-grid{grid-template-columns:1fr;}
 }
+
+/* ── LIGHT THEME OVERRIDES (slides 2–4) ── */
+.s-project{background:#FFFFFF!important;}
+.s-project .eyebrow{color:#1D4ED8;}
+.s-project .eyebrow::before{background:#1D4ED8;}
+.s-project h2.slide-h{color:#0F172A;}
+.s-project .slide-lead{color:#475569;}
+.s-project .challenge-list li{color:#475569;}
+.s-project .challenge-list li::before{
+  background-color:rgba(29,78,216,.08);
+  border-color:rgba(29,78,216,.28);
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 8'%3E%3Cpath d='M1 4l3 3 5-6' stroke='%231D4ED8' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+.s-project .proj-stat{background:#F8FAFC;border-color:#CBD5E1;}
+.s-project .proj-stat-val{color:#0F172A;}
+.s-project .proj-stat-val span{color:#1D4ED8;}
+.s-project .proj-stat-lbl{color:#94A3B8;}
+.s-project .proj-logo{filter:none;}
+
+.s-method{background:#F8FAFC!important;}
+.s-method .eyebrow{color:#1D4ED8;}
+.s-method .eyebrow::before{background:#1D4ED8;}
+.s-method h2.slide-h{color:#0F172A;}
+.s-method .slide-lead{color:#475569;}
+.s-method .method-step{background:#FFFFFF;border-color:#CBD5E1;}
+.s-method .step-num{color:#1D4ED8;}
+.s-method .step-title{color:#0F172A;}
+.s-method .step-desc{color:#475569;}
+.s-method .method-arrow{color:#CBD5E1;}
+.s-method .tool-chip{background:rgba(29,78,216,.07);border-color:rgba(29,78,216,.2);color:#1D4ED8;}
+
+.s-insights{background:#EFF6FF!important;}
+.s-insights .eyebrow{color:#1D4ED8;}
+.s-insights .eyebrow::before{background:#1D4ED8;}
+.s-insights h2.slide-h{color:#0F172A;}
+.s-insights .slide-lead{color:#475569;}
+.s-insights .insight-card{background:#FFFFFF;border-color:#CBD5E1;}
+.s-insights .insight-big{color:#0F172A;}
+.s-insights .insight-big span{color:#475569;}
+.s-insights .insight-lbl{color:#475569;}
+.s-insights .insight-ctx{color:#94A3B8;}
+
+/* nav dots: dark-friendly on light slides */
+#nav-dots .nav-dot{background:rgba(29,78,216,.15);}
+#nav-dots .nav-dot:hover{background:rgba(29,78,216,.35);}
+#nav-dots .nav-dot.active{background:#1D4ED8;box-shadow:0 0 8px rgba(29,78,216,.4);}
+#slide-counter{color:#94A3B8;}
+
+/* dash intro: keep navy bg */
+.dash-intro{background:var(--navy,#0B1A3B)!important;}
 </style>
 <nav class="porto-topnav">
   <a href="../../" class="porto-brand"><span class="porto-mark">DS</span>Dita Shahihah</a>
