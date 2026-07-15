@@ -8,8 +8,14 @@
 }
 html{scroll-behavior:smooth}
 body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:var(--g);color:var(--text);font-size:14px;line-height:1.5;overflow-x:hidden}
+/* TOP NAV */
+.porto-topnav{position:fixed;top:0;left:0;right:0;z-index:2000;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid #E2E8F0;height:52px;display:flex;align-items:center;padding:0 22px;justify-content:space-between;font-family:-apple-system,'Plus Jakarta Sans','Segoe UI',sans-serif}
+.porto-brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:.9rem;color:#0B1A3B;text-decoration:none}
+.porto-mark{width:26px;height:26px;background:#1D4ED8;border-radius:5px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;flex-shrink:0}
+.porto-back{font-size:.82rem;font-weight:600;color:#475569;background:#F8FAFC;border:1px solid #CBD5E1;padding:6px 13px;border-radius:5px;text-decoration:none;transition:all .15s}
+.porto-back:hover{color:#0B1A3B;border-color:#94A3B8}
 /* SLIDES */
-.slides{height:100vh;overflow-y:scroll;scroll-snap-type:y mandatory}
+.slides{height:calc(100vh - 52px);margin-top:52px;overflow-y:scroll;scroll-snap-type:y mandatory}
 .slide{scroll-snap-align:start;height:100vh;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;padding:64px 52px}
 .s-dash{height:auto;min-height:100vh;display:block;padding:0;scroll-snap-align:start}
 /* NAV */
@@ -17,7 +23,7 @@ body{font-family:-apple-system,'Segoe UI',system-ui,sans-serif;background:var(--
 .nd{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,0.15);cursor:pointer;border:none;padding:0;transition:all .22s}
 .nd:hover{background:rgba(0,200,144,.5)}
 .nd.on{background:var(--mint);box-shadow:0 0 9px rgba(0,200,144,.55);transform:scale(1.35)}
-#prog{position:fixed;top:0;left:0;height:2px;background:linear-gradient(90deg,var(--mint),var(--sky));z-index:1000;width:0;transition:width .3s}
+#prog{position:fixed;top:52px;left:0;height:2px;background:linear-gradient(90deg,var(--mint),var(--sky));z-index:1000;width:0;transition:width .3s}
 #ctr{position:fixed;bottom:22px;right:20px;font-size:10px;letter-spacing:.12em;color:var(--text3);z-index:1000;font-variant-numeric:tabular-nums}
 /* EYEBROW */
 .ey{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--mint);margin-bottom:14px;display:flex;align-items:center;gap:9px}
@@ -152,6 +158,10 @@ h2.sh{font-size:clamp(26px,3.3vw,42px);font-weight:800;letter-spacing:-.03em;lin
 @media(max-width:800px){.lk-g4{grid-template-columns:1fr 1fr}.lk-g2{grid-template-columns:1fr}.lk-g3{grid-template-columns:1fr}}
 
 </style>
+<nav class="porto-topnav">
+  <a href="../../" class="porto-brand"><span class="porto-mark">DS</span>Dita Shahihah</a>
+  <a href="../../" class="porto-back">← Back to Portfolio</a>
+</nav>
 <div id="prog"></div>
 <div id="nav">
   <button class="nd on" data-i="0" title="Intro"></button>

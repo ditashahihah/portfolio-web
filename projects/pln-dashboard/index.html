@@ -27,9 +27,16 @@ body{
   line-height:1.5;
   overflow-x:hidden;
 }
+/* TOP NAV */
+.porto-topnav{position:fixed;top:0;left:0;right:0;z-index:2000;background:rgba(255,255,255,.97);backdrop-filter:blur(8px);border-bottom:1px solid #E2E8F0;height:52px;display:flex;align-items:center;padding:0 22px;justify-content:space-between;font-family:-apple-system,'Plus Jakarta Sans','Segoe UI',sans-serif}
+.porto-brand{display:flex;align-items:center;gap:9px;font-weight:800;font-size:.9rem;color:#0B1A3B;text-decoration:none}
+.porto-mark{width:26px;height:26px;background:#1D4ED8;border-radius:5px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:800;flex-shrink:0}
+.porto-back{font-size:.82rem;font-weight:600;color:#475569;background:#F8FAFC;border:1px solid #CBD5E1;padding:6px 13px;border-radius:5px;text-decoration:none;transition:all .15s}
+.porto-back:hover{color:#0B1A3B;border-color:#94A3B8}
 /* SCROLL CONTAINER */
 .slides{
-  height:100vh;
+  height:calc(100vh - 52px);
+  margin-top:52px;
   overflow-y:scroll;
   scroll-snap-type:y mandatory;
   scroll-behavior:smooth;
@@ -91,7 +98,7 @@ body{
 /* PROGRESS BAR */
 #progress-bar{
   position:fixed;
-  top:0;left:0;
+  top:52px;left:0;
   height:2px;
   background:linear-gradient(90deg,var(--blue),var(--elec));
   z-index:1000;
@@ -530,6 +537,10 @@ table.ppivot .sub td.r{color:#0057A0!important;}
   .pchart-grid{grid-template-columns:1fr;}
 }
 </style>
+<nav class="porto-topnav">
+  <a href="../../" class="porto-brand"><span class="porto-mark">DS</span>Dita Shahihah</a>
+  <a href="../../" class="porto-back">← Back to Portfolio</a>
+</nav>
 <div id="progress-bar"></div>
 <div id="nav-dots">
   <button class="nav-dot active" data-slide="0" title="Intro"></button>
